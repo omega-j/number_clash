@@ -1,0 +1,181 @@
+{
+    "theme": {
+        "clientName": "TechGiantX",
+        "appName": "Tech Giant X LLC",
+        "light": {
+            "colorScheme": {
+                "primary": "#FBFBFB",
+                "secondary": "#B2B2B2",
+                "background": "#FFFFFF",
+                "surface": "#FFFFFF",
+                "error": "#F44336",
+                "onPrimary": "#000000",
+                "onSecondary": "#000000",
+                "onBackground": "#000000",
+                "onSurface": "#000000",
+                "onError": "#4D0101"
+            },
+            "appBarTheme": {
+                "backgroundColor": "#610000",
+                "foregroundColor": "#FFFFFF",
+                "iconThemeColor": "#F2FF00",
+                "shadowColor": "#4B4B4B",
+                "shadowSpreadRadius": 2,
+                "shadowBlurRadius": 6,
+                "shadowOffsetX": 0,
+                "shadowOffsetY": 2,
+                "shadowOpacity": 0.8
+            },
+            "buttonTheme": {
+                "buttonColor": "#9D1E1E",
+                "foregroundColor": "#FFFFFF",
+                "shadowColor": "#000000",
+                "shadowSpreadRadius": 5,
+                "shadowBlurRadius": 8,
+                "shadowOffsetX": 0,
+                "shadowOffsetY": 2,
+                "shadowOpacity": 0.7
+            },
+            "sliderTheme": {
+                "activeTrackColor": "#4CAF50",
+                "inactiveTrackColor": "#BDBDBD",
+                "thumbColor": "#6D6D6D",
+                "shadowColor": "#F70000",
+                "shadowSpreadRadius": 1,
+                "shadowBlurRadius": 4,
+                "shadowOffsetX": 0,
+                "shadowOffsetY": 1,
+                "shadowOpacity": 0.6
+            },
+            "switchTheme": {
+                "thumbColor": "#4E0808",
+                "trackColor": "#9E9E9E",
+                "shadowColor": "#FF0000",
+                "shadowSpreadRadius": 1,
+                "shadowBlurRadius": 4,
+                "shadowOffsetX": 0,
+                "shadowOffsetY": 1,
+                "shadowOpacity": 0.5
+            },
+            "iconButtonTheme": {
+                "iconColor": "#010101",
+                "backgroundColor": "#600404",
+                "shadowColor": "#9E9E9E",
+                "shadowSpreadRadius": 2,
+                "shadowBlurRadius": 6,
+                "shadowOffsetX": 0,
+                "shadowOffsetY": 2,
+                "shadowOpacity": 0.7
+            },
+            "textButtonTheme": {
+                "textColor": "#F321E2",
+                "backgroundColor": "#691111",
+                "shadowColor": "#9E9E9E",
+                "shadowSpreadRadius": 2,
+                "shadowBlurRadius": 6,
+                "shadowOffsetX": 0,
+                "shadowOffsetY": 2,
+                "shadowOpacity": 0.7
+            },
+            "bottomNavigationBarTheme": {
+                "selectedItemColor": "#FFFFFF",
+                "unselectedItemColor": "#E3E3E3",
+                "backgroundColor": "#666666",
+                "shadowColor": "#9E9E9E",
+                "shadowSpreadRadius": 2,
+                "shadowBlurRadius": 6,
+                "shadowOffsetX": 0,
+                "shadowOffsetY": 2
+            },
+            "logoPath": "assets/images/client1.png"
+        },
+        "dark": {
+            "colorScheme": {
+                "primary": "#CFCFCF",
+                "secondary": "#B2B2B2",
+                "background": "#FFFFFF",
+                "surface": "#5A0F0F",
+                "error": "#F44336",
+                "onPrimary": "#000000",
+                "onSecondary": "#000000",
+                "onBackground": "#FFFFFF",
+                "onSurface": "#FFFFFF",
+                "onError": "#000000"
+            },
+            "appBarTheme": {
+                "backgroundColor": "#610202",
+                "foregroundColor": "#FFFFFF",
+                "iconThemeColor": "#F2FF00",
+                "shadowColor": "#FFFFFF",
+                "shadowSpreadRadius": 2,
+                "shadowBlurRadius": 30,
+                "shadowOffsetX": 0,
+                "shadowOffsetY": 0,
+                "shadowOpacity": 0.3
+            },
+            "buttonTheme": {
+                "buttonColor": "#ACACAC",
+                "foregroundColor": "#000000",
+                "shadowColor": "#000000",
+                "shadowSpreadRadius": 9,
+                "shadowBlurRadius": 15,
+                "shadowOffsetX": 0,
+                "shadowOffsetY": 4,
+                "shadowOpacity": 0.7
+            },
+            "sliderTheme": {
+                "activeTrackColor": "#B8A907",
+                "inactiveTrackColor": "#BDBDBD",
+                "thumbColor": "#6D6D6D",
+                "shadowColor": "#FF0000",
+                "shadowSpreadRadius": 1,
+                "shadowBlurRadius": 4,
+                "shadowOffsetX": 0,
+                "shadowOffsetY": 1,
+                "shadowOpacity": 0.6
+            },
+            "switchTheme": {
+                "thumbColor": "#000000",
+                "trackColor": "#9E9E9E",
+                "shadowColor": "#000000",
+                "shadowSpreadRadius": 5,
+                "shadowBlurRadius": 8,
+                "shadowOffsetX": 5,
+                "shadowOffsetY": 5,
+                "shadowOpacity": 0.5
+            },
+            "iconButtonTheme": {
+                "iconColor": "#3F0B6A",
+                "foregroundColor": "#000000",
+                "shadowColor": "#F7FC00",
+                "shadowSpreadRadius": 5,
+                "shadowBlurRadius": 6,
+                "shadowOffsetX": 0,
+                "shadowOffsetY": 2,
+                "shadowOpacity": 0.7
+            },
+            "textButtonTheme": {
+                "textColor": "#F321E2",
+                "backgroundColor": "#974C4C",
+                "foregroundColor": "#610202",
+                "shadowColor": "#9E9E9E",
+                "shadowSpreadRadius": 2,
+                "shadowBlurRadius": 6,
+                "shadowOffsetX": 0,
+                "shadowOffsetY": 2,
+                "shadowOpacity": 0.7
+            },
+            "bottomNavigationBarTheme": {
+                "selectedItemColor": "#FFFFFF",
+                "unselectedItemColor": "#E3E3E3",
+                "backgroundColor": "#666666",
+                "shadowColor": "#FF0000",
+                "shadowSpreadRadius": 2,
+                "shadowBlurRadius": 6,
+                "shadowOffsetX": 0,
+                "shadowOffsetY": 2
+            },
+            "logoPath": "assets/images/client1.png"
+        }
+    }
+}

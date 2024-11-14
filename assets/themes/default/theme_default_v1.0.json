@@ -1,0 +1,104 @@
+{
+    "theme": {
+        "clientName": "AlphaMeasurement",
+        "appName": "Alpha APP",
+        "light": {
+            "colorScheme": {
+                "primary": "#FFFFFF",
+                "secondary": "#B2B2B2",
+                "background": "#567396",
+                "surface": "#FFFFFF",
+                "error": "#F44336",
+                "onPrimary": "#000000",
+                "onSecondary": "#000000",
+                "onBackground": "#000000",
+                "onSurface": "#000000",
+                "onError": "#4D0101"
+            },
+            "appBarTheme": {
+                "backgroundColor": "#1E5689",
+                "foregroundColor": "#FFFFFF",
+                "iconThemeColor": "#F2FF00",
+                "shadowColor": "#4B4B4B",
+                "shadowSpreadRadius": 2,
+                "shadowBlurRadius": 6,
+                "shadowOffsetX": 0,
+                "shadowOffsetY": 2,
+                "shadowOpacity": 0.8
+            },
+            "bottomNavigationBarTheme": {
+                "selectedItemColor": "#FFFFFF",
+                "unselectedItemColor": "#E3E3E3",
+                "backgroundColor": "#3F6894",
+                "iconColor": "#000000",
+                "selectedIconColor": "#FFFFFF",
+                "textColor": "#E3E3E3",
+                "selectedTextColor": "#FFFFFF",
+                "shadowColor": "#9E9E9E",
+                "shadowSpreadRadius": 2,
+                "shadowBlurRadius": 6,
+                "shadowOffsetX": 0,
+                "shadowOffsetY": 2
+            },
+            "drawerTheme": {
+                "backgroundColor": "#567396",
+                "iconColor": "#FFFFFF",
+                "selectedIconColor": "#FFD700",
+                "textColor": "#E3E3E3",
+                "selectedTextColor": "#FFD700",
+                "headerBackgroundColor": "#1E5689",
+                "headerTextColor": "#FFFFFF"
+            },
+            "logoPath": "assets/images/app_logo_hightech_light.png"
+        },
+        "dark": {
+            "colorScheme": {
+                "primary": "#CFCFCF",
+                "secondary": "#B2B2B2",
+                "background": "#FFFFFF",
+                "surface": "#16191A",
+                "error": "#F44336",
+                "onPrimary": "#000000",
+                "onSecondary": "#000000",
+                "onBackground": "#FFFFFF",
+                "onSurface": "#FFFFFF",
+                "onError": "#000000"
+            },
+            "appBarTheme": {
+                "backgroundColor": "#282730",
+                "foregroundColor": "#FFFFFF",
+                "iconThemeColor": "#F2FF00",
+                "shadowColor": "#000000",
+                "shadowSpreadRadius": 2,
+                "shadowBlurRadius": 30,
+                "shadowOffsetX": 0,
+                "shadowOffsetY": 0,
+                "shadowOpacity": 0.3
+            },
+            "bottomNavigationBarTheme": {
+                "selectedItemColor": "#FFFFFF",
+                "unselectedItemColor": "#E3E3E3",
+                "backgroundColor": "#666666",
+                "iconColor": "#CFCFCF",
+                "selectedIconColor": "#FFFFFF",
+                "textColor": "#B2B2B2",
+                "selectedTextColor": "#FFFFFF",
+                "shadowColor": "#FF0000",
+                "shadowSpreadRadius": 2,
+                "shadowBlurRadius": 6,
+                "shadowOffsetX": 0,
+                "shadowOffsetY": 2
+            },
+            "drawerTheme": {
+                "backgroundColor": "#282730",
+                "iconColor": "#FFFFFF",
+                "selectedIconColor": "#FFD700",
+                "textColor": "#B2B2B2",
+                "selectedTextColor": "#FFD700",
+                "headerBackgroundColor": "#1E5689",
+                "headerTextColor": "#FFFFFF"
+            },
+            "logoPath": "assets/images/app_logo_hightech_dark.png"
+        }
+    }
+}

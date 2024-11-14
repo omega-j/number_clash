@@ -1,0 +1,1 @@
+ [FirebaseCore][I-COR000012] Could not locate configuration file: 'GoogleService-Info.plist'.

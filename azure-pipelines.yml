@@ -1,0 +1,20 @@
+trigger:
+  branches:
+    include:
+      - main
+
+jobs:
+  - job: FlutterTest
+    pool:
+      vmImage: 'macOS-latest'
+    steps:
+      - task: UseFlutter@1
+        inputs:
+          channel: 'stable' # specify 'beta' or 'master' if needed
+          version: 'latest-stable'
+      - script: flutter pub get
+        displayName: 'Install dependencies'
+      - script: flutter test --coverage
+        displayName: 'Run tests'
+pool:
+  vmImage: 'ubuntu-latest'  # Options: 'windows-latest', 'ubuntu-latest', 'macos-latest'

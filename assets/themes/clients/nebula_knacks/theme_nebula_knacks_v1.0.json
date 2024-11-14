@@ -1,0 +1,96 @@
+{
+    "theme": {
+        "light": {
+            "colorScheme": {
+                "primary": "#FF5722",
+                "primaryContainer": "#FF8A65",
+                "secondary": "#4CAF50",
+                "secondaryContainer": "#81C784",
+                "background": "#FFFFFF",
+                "surface": "#F5F5F5",
+                "error": "#D32F2F",
+                "onPrimary": "#FFFFFF",
+                "onSecondary": "#FFFFFF",
+                "onBackground": "#212121",
+                "onSurface": "#212121",
+                "onError": "#FFFFFF"
+            },
+            "textTheme": {
+                "fontFamily": "Roboto",
+                "displayLarge": { "color": "#333333", "fontSize": 96, "fontWeight": 400 },
+                "displayMedium": { "color": "#333333", "fontSize": 60, "fontWeight": 400 },
+                "displaySmall": { "color": "#333333", "fontSize": 48, "fontWeight": 400 },
+                "headlineMedium": { "color": "#333333", "fontSize": 34, "fontWeight": 400 },
+                "headlineSmall": { "color": "#333333", "fontSize": 24, "fontWeight": 400 },
+                "titleLarge": { "color": "#333333", "fontSize": 20, "fontWeight": 500 },
+                "titleMedium": { "color": "#666666", "fontSize": 16, "fontWeight": 400 },
+                "titleSmall": { "color": "#666666", "fontSize": 14, "fontWeight": 500 },
+                "bodyLarge": { "color": "#212121", "fontSize": 16, "fontWeight": 400 },
+                "bodyMedium": { "color": "#424242", "fontSize": 14, "fontWeight": 400 },
+                "labelLarge": { "color": "#FFFFFF", "fontSize": 14, "fontWeight": 500 },
+                "bodySmall": { "color": "#757575", "fontSize": 12, "fontWeight": 400 },
+                "labelSmall": { "color": "#757575", "fontSize": 10, "fontWeight": 400 }
+            },
+            "componentStyles": {
+                "highlightColor": "#FFCCBC",
+                "focusColor": "#81C784",
+                "shadowColor": "#00000020",
+                "splashColor": "#FF5722",
+                "hintColor": "#9E9E9E",
+                "dividerColor": "#BDBDBD"
+            },
+            "graph": {
+                "backgroundColor": "#F5F5F5",
+                "lineColor": "#FF5722",
+                "incrementLineColor": "#FFCCBC"
+            },
+            "logoPath": "assets/images/app_logo_demo_light.png"
+        },
+        "dark": {
+            "colorScheme": {
+                "primary": "#FF9800",
+                "primaryContainer": "#FF7043",
+                "secondary": "#388E3C",
+                "secondaryContainer": "#66BB6A",
+                "background": "#102027",
+                "surface": "#37474F",
+                "error": "#CF6679",
+                "onPrimary": "#FFFFFF",
+                "onSecondary": "#FFFFFF",
+                "onBackground": "#E0E0E0",
+                "onSurface": "#E0E0E0",
+                "onError": "#000000"
+            },
+            "textTheme": {
+                "fontFamily": "Roboto",
+                "displayLarge": { "color": "#E0E0E0", "fontSize": 96, "fontWeight": 400 },
+                "displayMedium": { "color": "#E0E0E0", "fontSize": 60, "fontWeight": 400 },
+                "displaySmall": { "color": "#E0E0E0", "fontSize": 48, "fontWeight": 400 },
+                "headlineMedium": { "color": "#E0E0E0", "fontSize": 34, "fontWeight": 400 },
+                "headlineSmall": { "color": "#E0E0E0", "fontSize": 24, "fontWeight": 400 },
+                "titleLarge": { "color": "#FF9800", "fontSize": 20, "fontWeight": 500 },
+                "titleMedium": { "color": "#66BB6A", "fontSize": 16, "fontWeight": 400 },
+                "titleSmall": { "color": "#66BB6A", "fontSize": 14, "fontWeight": 500 },
+                "bodyLarge": { "color": "#E0E0E0", "fontSize": 16, "fontWeight": 400 },
+                "bodyMedium": { "color": "#9E9E9E", "fontSize": 14, "fontWeight": 400 },
+                "labelLarge": { "color": "#000000", "fontSize": 14, "fontWeight": 500 },
+                "bodySmall": { "color": "#9E9E9E", "fontSize": 12, "fontWeight": 400 },
+                "labelSmall": { "color": "#9E9E9E", "fontSize": 10, "fontWeight": 400 }
+            },
+            "componentStyles": {
+                "highlightColor": "#66BB6A",
+                "focusColor": "#FF9800",
+                "shadowColor": "#00000060",
+                "splashColor": "#FF7043",
+                "hintColor": "#9E9E9E",
+                "dividerColor": "#424242"
+            },
+            "graph": {
+                "backgroundColor": "#37474F",
+                "lineColor": "#FF9800",
+                "incrementLineColor": "#66BB6A"
+            },
+            "logoPath": "assets/images/app_logo_demo_dark.png"
+        }
+    }
+}

@@ -1,0 +1,16 @@
+{
+    "locales": [
+      {
+        "languageCode": "en",
+        "fileName": "messages_en.json"
+      },
+      {
+        "languageCode": "es",
+        "fileName": "messages_es.json"
+      },
+      {
+        "languageCode": "fr",
+        "fileName": "messages_fr.json"
+      }
+    ]
+  }
