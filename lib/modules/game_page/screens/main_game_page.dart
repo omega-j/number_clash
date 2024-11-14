@@ -15,9 +15,9 @@ class MainGamePage extends ConsumerWidget {
     
     Future.microtask(() {
       final gameDots = [
-        GameDot(dotType: DotType.five, position: Offset(130.0, 390.0)),
-        GameDot(dotType: DotType.twenty, position: Offset(180.0, 400.0)),
-        GameDot(dotType: DotType.one, position: Offset(230.0, 410.0)),
+        GameDot(dotType: DotType.five, position: Offset(180.0, 390.0)),
+        GameDot(dotType: DotType.twenty, position: Offset(100.0, 100.0)),
+        GameDot(dotType: DotType.one, position: Offset(30.0, 410.0)),
       ];
       dotManager.addDots(gameDots);
     });

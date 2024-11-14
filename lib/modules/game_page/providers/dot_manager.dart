@@ -87,7 +87,7 @@ class DotManager extends StateNotifier<List<BaseDot>> {
 
   bool _isCloseEnough(Offset playerPosition, Offset dotPosition) {
     final distance = _calculateDistance(playerPosition, dotPosition);
-    return distance < 100; // Threshold for linking
+    return distance < 50; // Threshold for linking
   }
 }
 final dotManagerProvider = StateNotifierProvider<DotManager, List<BaseDot>>((ref) {
