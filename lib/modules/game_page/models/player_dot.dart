@@ -5,31 +5,9 @@ import 'game_dot.dart';
 
 class PlayerDot extends StatefulWidget {
   final DotType dotType;
-  final Offset position;
+  final Offset initialPosition;
 
-  const PlayerDot({required this.dotType, required this.position, Key? key})
-      : super(key: key);
-
-  // Copy-with method for immutability
-  PlayerDot copyWith({DotType? dotType, Offset? position}) {
-    return PlayerDot(
-      dotType: dotType ?? this.dotType,
-      position: position ?? this.position,
-    );
-  }
-
-  PlayerDot increaseValue(int addedValue) {
-    final newType = _getDotTypeForValue(dotType.value + addedValue);
-    return copyWith(
-        dotType: newType); // Creates a new instance with updated dotType
-  }
-
-  DotType _getDotTypeForValue(int totalValue) {
-    if (totalValue >= DotType.fifty.value) return DotType.fifty;
-    if (totalValue >= DotType.twenty.value) return DotType.twenty;
-    if (totalValue >= DotType.five.value) return DotType.five;
-    return DotType.one;
-  }
+  const PlayerDot({required this.dotType, required this.initialPosition, Key? key}) : super(key: key);
 
   @override
   _PlayerDotState createState() => _PlayerDotState();
@@ -41,12 +19,14 @@ class _PlayerDotState extends State<PlayerDot> {
   @override
   void initState() {
     super.initState();
-    position = widget.position;
+    // Initialize position based on initial position provided
+    position = widget.initialPosition;
   }
 
   void _onPanUpdate(DragUpdateDetails details) {
     setState(() {
-      position += details.delta; // Update position as the dot is dragged
+      // Update position based on drag delta
+      position += details.delta;
     });
   }
 

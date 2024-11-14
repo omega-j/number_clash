@@ -13,13 +13,12 @@ class MainGamePage extends StatelessWidget {
     return Scaffold(
       body: Stack(
         children: [
-          // Display PlayerDot in the center
-          Positioned(
-            left: MediaQuery.of(context).size.width / 2,
-            top: MediaQuery.of(context).size.height / 2,
-            child: PlayerDot(
-              dotType: DotType.one,
-              position: Offset.zero, // Starting position
+          // Display PlayerDot in the center with initialPosition
+          PlayerDot(
+            dotType: DotType.one,
+            initialPosition: Offset(
+              MediaQuery.of(context).size.width / 2,
+              MediaQuery.of(context).size.height / 2,
             ),
           ),
           // Add some scattered GameDots
