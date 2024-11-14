@@ -4,7 +4,7 @@
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'dart:async' as _i7;
-import 'dart:typed_data' as _i11;
+import 'dart:typed_data' as _i9;
 import 'dart:ui' as _i8;
 
 import 'package:beta_app/models/common/result.dart' as _i3;
@@ -14,12 +14,9 @@ import 'package:beta_app/modules/input_output/providers/input_output_provider.da
     as _i4;
 import 'package:beta_app/modules/input_output/services/i_file_service.dart'
     as _i2;
-import 'package:beta_app/modules/user_interface/graph/graph_widget_parameters.dart'
-    as _i9;
-import 'package:fl_chart/fl_chart.dart' as _i10;
 import 'package:flutter_riverpod/flutter_riverpod.dart' as _i6;
 import 'package:mockito/mockito.dart' as _i1;
-import 'package:state_notifier/state_notifier.dart' as _i12;
+import 'package:state_notifier/state_notifier.dart' as _i10;
 
 // ignore_for_file: type=lint
 // ignore_for_file: avoid_redundant_argument_values
@@ -183,39 +180,6 @@ class MockInputOutputProvider extends _i1.Mock
       ) as _i7.Future<List<String>>);
 
   @override
-  _i7.Future<_i3.Result<List<_i5.DatabaseDataFile>>> loadDataFiles() =>
-      (super.noSuchMethod(
-        Invocation.method(
-          #loadDataFiles,
-          [],
-        ),
-        returnValue: _i7.Future<_i3.Result<List<_i5.DatabaseDataFile>>>.value(
-            _FakeResult_1<List<_i5.DatabaseDataFile>>(
-          this,
-          Invocation.method(
-            #loadDataFiles,
-            [],
-          ),
-        )),
-      ) as _i7.Future<_i3.Result<List<_i5.DatabaseDataFile>>>);
-
-  @override
-  _i3.Result<_i9.GraphWidgetParameters> getGraphWidgetParameters() =>
-      (super.noSuchMethod(
-        Invocation.method(
-          #getGraphWidgetParameters,
-          [],
-        ),
-        returnValue: _FakeResult_1<_i9.GraphWidgetParameters>(
-          this,
-          Invocation.method(
-            #getGraphWidgetParameters,
-            [],
-          ),
-        ),
-      ) as _i3.Result<_i9.GraphWidgetParameters>);
-
-  @override
   _i7.Future<_i3.Result<void>> deleteFile(String? filename) =>
       (super.noSuchMethod(
         Invocation.method(
@@ -227,23 +191,6 @@ class MockInputOutputProvider extends _i1.Mock
           Invocation.method(
             #deleteFile,
             [filename],
-          ),
-        )),
-      ) as _i7.Future<_i3.Result<void>>);
-
-  @override
-  _i7.Future<_i3.Result<void>> exportDataFileAsImage(
-          _i5.DatabaseDataFile? file) =>
-      (super.noSuchMethod(
-        Invocation.method(
-          #exportDataFileAsImage,
-          [file],
-        ),
-        returnValue: _i7.Future<_i3.Result<void>>.value(_FakeResult_1<void>(
-          this,
-          Invocation.method(
-            #exportDataFileAsImage,
-            [file],
           ),
         )),
       ) as _i7.Future<_i3.Result<void>>);
@@ -266,84 +213,16 @@ class MockInputOutputProvider extends _i1.Mock
       ) as _i7.Future<_i3.Result<_i5.DatabaseDataFile>>);
 
   @override
-  _i3.Result<List<_i10.FlSpot>> extractStaticData(String? filename) =>
-      (super.noSuchMethod(
-        Invocation.method(
-          #extractStaticData,
-          [filename],
-        ),
-        returnValue: _FakeResult_1<List<_i10.FlSpot>>(
-          this,
-          Invocation.method(
-            #extractStaticData,
-            [filename],
-          ),
-        ),
-      ) as _i3.Result<List<_i10.FlSpot>>);
-
-  @override
-  _i3.Result<List<_i10.FlSpot>> extractStaticDataFromCsv(String? filename) =>
-      (super.noSuchMethod(
-        Invocation.method(
-          #extractStaticDataFromCsv,
-          [filename],
-        ),
-        returnValue: _FakeResult_1<List<_i10.FlSpot>>(
-          this,
-          Invocation.method(
-            #extractStaticDataFromCsv,
-            [filename],
-          ),
-        ),
-      ) as _i3.Result<List<_i10.FlSpot>>);
-
-  @override
-  _i7.Future<_i3.Result<List<_i10.FlSpot>>> loadCsvFileAsFlSpots(
-          String? filePath) =>
-      (super.noSuchMethod(
-        Invocation.method(
-          #loadCsvFileAsFlSpots,
-          [filePath],
-        ),
-        returnValue: _i7.Future<_i3.Result<List<_i10.FlSpot>>>.value(
-            _FakeResult_1<List<_i10.FlSpot>>(
-          this,
-          Invocation.method(
-            #loadCsvFileAsFlSpots,
-            [filePath],
-          ),
-        )),
-      ) as _i7.Future<_i3.Result<List<_i10.FlSpot>>>);
-
-  @override
-  _i7.Future<_i3.Result<List<_i10.FlSpot>>> loadJsonFileAsFlSpots(
-          String? filePath) =>
-      (super.noSuchMethod(
-        Invocation.method(
-          #loadJsonFileAsFlSpots,
-          [filePath],
-        ),
-        returnValue: _i7.Future<_i3.Result<List<_i10.FlSpot>>>.value(
-            _FakeResult_1<List<_i10.FlSpot>>(
-          this,
-          Invocation.method(
-            #loadJsonFileAsFlSpots,
-            [filePath],
-          ),
-        )),
-      ) as _i7.Future<_i3.Result<List<_i10.FlSpot>>>);
-
-  @override
   _i7.Future<_i3.Result<void>> saveFile(
-    _i5.DatabaseDataFile? dataFile,
-    List<int>? content,
+    _i9.Uint8List? imageData,
+    String? fileName,
   ) =>
       (super.noSuchMethod(
         Invocation.method(
           #saveFile,
           [
-            dataFile,
-            content,
+            imageData,
+            fileName,
           ],
         ),
         returnValue: _i7.Future<_i3.Result<void>>.value(_FakeResult_1<void>(
@@ -351,36 +230,8 @@ class MockInputOutputProvider extends _i1.Mock
           Invocation.method(
             #saveFile,
             [
-              dataFile,
-              content,
-            ],
-          ),
-        )),
-      ) as _i7.Future<_i3.Result<void>>);
-
-  @override
-  _i7.Future<_i3.Result<void>> saveGraphImage(
-    _i11.Uint8List? imageData,
-    String? measurementTitle,
-    String? serialNumber,
-  ) =>
-      (super.noSuchMethod(
-        Invocation.method(
-          #saveGraphImage,
-          [
-            imageData,
-            measurementTitle,
-            serialNumber,
-          ],
-        ),
-        returnValue: _i7.Future<_i3.Result<void>>.value(_FakeResult_1<void>(
-          this,
-          Invocation.method(
-            #saveGraphImage,
-            [
               imageData,
-              measurementTitle,
-              serialNumber,
+              fileName,
             ],
           ),
         )),
@@ -404,7 +255,7 @@ class MockInputOutputProvider extends _i1.Mock
 
   @override
   _i6.RemoveListener addListener(
-    _i12.Listener<List<_i5.DatabaseDataFile>>? listener, {
+    _i10.Listener<List<_i5.DatabaseDataFile>>? listener, {
     bool? fireImmediately = true,
   }) =>
       (super.noSuchMethod(

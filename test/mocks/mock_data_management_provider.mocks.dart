@@ -9,16 +9,16 @@ import 'dart:ui' as _i10;
 import 'package:beta_app/modules/data_management/models/database_data_file.dart'
     as _i6;
 import 'package:beta_app/modules/data_management/providers/data_management_provider.dart'
-    as _i2;
-import 'package:beta_app/modules/database/providers/i_database_provider.dart'
     as _i5;
-import 'package:beta_app/modules/input_output/services/i_file_service.dart'
+import 'package:beta_app/modules/database/models/data_record.dart' as _i9;
+import 'package:beta_app/modules/database/providers/i_database_provider.dart'
     as _i4;
-import 'package:beta_app/modules/logging/providers/i_logging_provider.dart'
+import 'package:beta_app/modules/input_output/services/i_file_service.dart'
     as _i3;
-import 'package:fl_chart/fl_chart.dart' as _i8;
+import 'package:beta_app/modules/logging/providers/i_logging_provider.dart'
+    as _i2;
 import 'package:mockito/mockito.dart' as _i1;
-import 'package:mockito/src/dummies.dart' as _i9;
+import 'package:mockito/src/dummies.dart' as _i8;
 
 // ignore_for_file: type=lint
 // ignore_for_file: avoid_redundant_argument_values
@@ -33,42 +33,73 @@ import 'package:mockito/src/dummies.dart' as _i9;
 // ignore_for_file: camel_case_types
 // ignore_for_file: subtype_of_sealed_class
 
+class _FakeILoggingProvider_0 extends _i1.SmartFake
+    implements _i2.ILoggingProvider {
+  _FakeILoggingProvider_0(
+    Object parent,
+    Invocation parentInvocation,
+  ) : super(
+          parent,
+          parentInvocation,
+        );
+}
+
+class _FakeIFileService_1 extends _i1.SmartFake implements _i3.IFileService {
+  _FakeIFileService_1(
+    Object parent,
+    Invocation parentInvocation,
+  ) : super(
+          parent,
+          parentInvocation,
+        );
+}
+
+class _FakeIDatabaseProvider_2 extends _i1.SmartFake
+    implements _i4.IDatabaseProvider {
+  _FakeIDatabaseProvider_2(
+    Object parent,
+    Invocation parentInvocation,
+  ) : super(
+          parent,
+          parentInvocation,
+        );
+}
+
 /// A class which mocks [DataManagementProvider].
 ///
 /// See the documentation for Mockito's code generation for more information.
 class MockDataManagementProvider extends _i1.Mock
-    implements _i2.DataManagementProvider {
+    implements _i5.DataManagementProvider {
   MockDataManagementProvider() {
     _i1.throwOnMissingStub(this);
   }
 
   @override
-  set logger(_i3.ILoggingProvider? _logger) => super.noSuchMethod(
-        Invocation.setter(
-          #logger,
-          _logger,
+  _i2.ILoggingProvider get logger => (super.noSuchMethod(
+        Invocation.getter(#logger),
+        returnValue: _FakeILoggingProvider_0(
+          this,
+          Invocation.getter(#logger),
         ),
-        returnValueForMissingStub: null,
-      );
+      ) as _i2.ILoggingProvider);
 
   @override
-  set fileService(_i4.IFileService? _fileService) => super.noSuchMethod(
-        Invocation.setter(
-          #fileService,
-          _fileService,
+  _i3.IFileService get fileService => (super.noSuchMethod(
+        Invocation.getter(#fileService),
+        returnValue: _FakeIFileService_1(
+          this,
+          Invocation.getter(#fileService),
         ),
-        returnValueForMissingStub: null,
-      );
+      ) as _i3.IFileService);
 
   @override
-  set databaseProvider(_i5.IDatabaseProvider? _databaseProvider) =>
-      super.noSuchMethod(
-        Invocation.setter(
-          #databaseProvider,
-          _databaseProvider,
+  _i4.IDatabaseProvider get databaseProvider => (super.noSuchMethod(
+        Invocation.getter(#databaseProvider),
+        returnValue: _FakeIDatabaseProvider_2(
+          this,
+          Invocation.getter(#databaseProvider),
         ),
-        returnValueForMissingStub: null,
-      );
+      ) as _i4.IDatabaseProvider);
 
   @override
   List<_i6.DatabaseDataFile> get dataFiles => (super.noSuchMethod(
@@ -89,16 +120,42 @@ class MockDataManagementProvider extends _i1.Mock
       ) as List<_i6.DatabaseDataFile>);
 
   @override
+  List<String> get tableHeaders => (super.noSuchMethod(
+        Invocation.getter(#tableHeaders),
+        returnValue: <String>[],
+      ) as List<String>);
+
+  @override
+  List<List<String>> get tableData => (super.noSuchMethod(
+        Invocation.getter(#tableData),
+        returnValue: <List<String>>[],
+      ) as List<List<String>>);
+
+  @override
   bool get hasListeners => (super.noSuchMethod(
         Invocation.getter(#hasListeners),
         returnValue: false,
       ) as bool);
 
   @override
-  _i7.Future<void> loadDataFiles() => (super.noSuchMethod(
+  _i7.Future<void> initialize({required String? sessionType}) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #initialize,
+          [],
+          {#sessionType: sessionType},
+        ),
+        returnValue: _i7.Future<void>.value(),
+        returnValueForMissingStub: _i7.Future<void>.value(),
+      ) as _i7.Future<void>);
+
+  @override
+  _i7.Future<void> loadDataFiles({required String? sessionType}) =>
+      (super.noSuchMethod(
         Invocation.method(
           #loadDataFiles,
           [],
+          {#sessionType: sessionType},
         ),
         returnValue: _i7.Future<void>.value(),
         returnValueForMissingStub: _i7.Future<void>.value(),
@@ -188,21 +245,12 @@ class MockDataManagementProvider extends _i1.Mock
       );
 
   @override
-  double getMaxYValue(List<_i8.FlSpot>? data) => (super.noSuchMethod(
-        Invocation.method(
-          #getMaxYValue,
-          [data],
-        ),
-        returnValue: 0.0,
-      ) as double);
-
-  @override
   String generateFilename(String? serialNumber) => (super.noSuchMethod(
         Invocation.method(
           #generateFilename,
           [serialNumber],
         ),
-        returnValue: _i9.dummyValue<String>(
+        returnValue: _i8.dummyValue<String>(
           this,
           Invocation.method(
             #generateFilename,
@@ -233,6 +281,26 @@ class MockDataManagementProvider extends _i1.Mock
         Invocation.method(
           #loadJsonDataFiles,
           [],
+        ),
+        returnValue: _i7.Future<void>.value(),
+        returnValueForMissingStub: _i7.Future<void>.value(),
+      ) as _i7.Future<void>);
+
+  @override
+  List<_i9.DataRecord> fetchGraphRecordsBySession(String? sessionId) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #fetchGraphRecordsBySession,
+          [sessionId],
+        ),
+        returnValue: <_i9.DataRecord>[],
+      ) as List<_i9.DataRecord>);
+
+  @override
+  _i7.Future<void> markFileAsDeleted(String? fileName) => (super.noSuchMethod(
+        Invocation.method(
+          #markFileAsDeleted,
+          [fileName],
         ),
         returnValue: _i7.Future<void>.value(),
         returnValueForMissingStub: _i7.Future<void>.value(),

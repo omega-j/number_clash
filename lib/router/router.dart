@@ -6,6 +6,7 @@ import '../modules/calibration/screens/calibration_data_page.dart';
 import '../modules/calibration/screens/calibration_page.dart';
 import '../modules/calibration/screens/calibration_step_page.dart';
 import '../modules/data_management/screens/data_management_page.dart';
+import '../modules/game_page/screens/main_game_page.dart';
 import '../screens/main_page.dart';
 import '../screens/real_time_data_page.dart';
 import '../modules/settings/screens/settings_page.dart';
@@ -26,22 +27,7 @@ class AppRouter extends RootStackRouter {
           durationInMilliseconds: 500,
         ),
         CustomRoute(
-          page: SetupRoute.page,
-          transitionsBuilder: _slideTransition,
-          durationInMilliseconds: 500,
-        ),
-        CustomRoute(
-          page: CalibrationRoute.page,
-          transitionsBuilder: _slideTransition,
-          durationInMilliseconds: 500,
-        ),
-        CustomRoute(
-          page: CalibrationStepRoute.page,
-          transitionsBuilder: _slideTransition,
-          durationInMilliseconds: 500,
-        ),
-        CustomRoute(
-          page: RealTimeDataRoute.page,
+          page: MainGameRoute.page, // Updated reference
           transitionsBuilder: _slideTransition,
           durationInMilliseconds: 500,
         ),
@@ -52,16 +38,6 @@ class AppRouter extends RootStackRouter {
         ),
         CustomRoute(
           page: SettingsRoute.page,
-          transitionsBuilder: _slideTransition,
-          durationInMilliseconds: 500,
-        ),
-        CustomRoute(
-          page: CalibrationDataRoute.page,
-          transitionsBuilder: _slideTransition,
-          durationInMilliseconds: 500,
-        ),
-        CustomRoute(
-          page: CalibrationCompletionRoute.page,
           transitionsBuilder: _slideTransition,
           durationInMilliseconds: 500,
         ),

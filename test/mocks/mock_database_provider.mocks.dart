@@ -4,8 +4,9 @@
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'dart:async' as _i6;
+import 'dart:typed_data' as _i8;
 
-import 'package:beta_app/enums/common_enums.dart' as _i8;
+import 'package:beta_app/enums/common_enums.dart' as _i9;
 import 'package:beta_app/models/common/result.dart' as _i3;
 import 'package:beta_app/modules/database/models/data_record.dart' as _i7;
 import 'package:beta_app/modules/database/providers/database_provider.dart'
@@ -14,7 +15,7 @@ import 'package:beta_app/modules/logging/providers/i_logging_provider.dart'
     as _i2;
 import 'package:flutter_riverpod/flutter_riverpod.dart' as _i5;
 import 'package:mockito/mockito.dart' as _i1;
-import 'package:state_notifier/state_notifier.dart' as _i9;
+import 'package:state_notifier/state_notifier.dart' as _i10;
 
 // ignore_for_file: type=lint
 // ignore_for_file: avoid_redundant_argument_values
@@ -130,11 +131,11 @@ class MockDatabaseProvider extends _i1.Mock implements _i4.DatabaseProvider {
   _i6.Future<_i3.Result<String>> addRecord({
     required String? fileName,
     required DateTime? creationDate,
-    required String? filePath,
-    required _i8.MeasurementType? measurementType,
-    required _i8.DataFileType? fileType,
-    Map<String, dynamic>? metadata,
+    _i8.Uint8List? binaryData,
     Map<String, dynamic>? data,
+    required _i9.MeasurementType? measurementType,
+    required _i9.DataFileType? fileType,
+    Map<String, dynamic>? metadata,
   }) =>
       (super.noSuchMethod(
         Invocation.method(
@@ -143,11 +144,11 @@ class MockDatabaseProvider extends _i1.Mock implements _i4.DatabaseProvider {
           {
             #fileName: fileName,
             #creationDate: creationDate,
-            #filePath: filePath,
+            #binaryData: binaryData,
+            #data: data,
             #measurementType: measurementType,
             #fileType: fileType,
             #metadata: metadata,
-            #data: data,
           },
         ),
         returnValue: _i6.Future<_i3.Result<String>>.value(_FakeResult_1<String>(
@@ -158,15 +159,57 @@ class MockDatabaseProvider extends _i1.Mock implements _i4.DatabaseProvider {
             {
               #fileName: fileName,
               #creationDate: creationDate,
-              #filePath: filePath,
+              #binaryData: binaryData,
+              #data: data,
               #measurementType: measurementType,
               #fileType: fileType,
               #metadata: metadata,
-              #data: data,
             },
           ),
         )),
       ) as _i6.Future<_i3.Result<String>>);
+
+  @override
+  _i3.Result<List<_i7.DataRecord>> getRecords({
+    String? sessionType,
+    Map<String, dynamic>? filter,
+  }) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #getRecords,
+          [],
+          {
+            #sessionType: sessionType,
+            #filter: filter,
+          },
+        ),
+        returnValue: _FakeResult_1<List<_i7.DataRecord>>(
+          this,
+          Invocation.method(
+            #getRecords,
+            [],
+            {
+              #sessionType: sessionType,
+              #filter: filter,
+            },
+          ),
+        ),
+      ) as _i3.Result<List<_i7.DataRecord>>);
+
+  @override
+  _i3.Result<_i8.Uint8List?> getRecordData(String? id) => (super.noSuchMethod(
+        Invocation.method(
+          #getRecordData,
+          [id],
+        ),
+        returnValue: _FakeResult_1<_i8.Uint8List?>(
+          this,
+          Invocation.method(
+            #getRecordData,
+            [id],
+          ),
+        ),
+      ) as _i3.Result<_i8.Uint8List?>);
 
   @override
   _i3.Result<_i7.DataRecord> getRecord(String? id) => (super.noSuchMethod(
@@ -224,24 +267,87 @@ class MockDatabaseProvider extends _i1.Mock implements _i4.DatabaseProvider {
       ) as _i6.Future<_i3.Result<void>>);
 
   @override
-  _i6.Future<void> clearData() => (super.noSuchMethod(
+  _i6.Future<_i3.Result<void>> clearData() => (super.noSuchMethod(
         Invocation.method(
           #clearData,
           [],
         ),
-        returnValue: _i6.Future<void>.value(),
-        returnValueForMissingStub: _i6.Future<void>.value(),
-      ) as _i6.Future<void>);
+        returnValue: _i6.Future<_i3.Result<void>>.value(_FakeResult_1<void>(
+          this,
+          Invocation.method(
+            #clearData,
+            [],
+          ),
+        )),
+      ) as _i6.Future<_i3.Result<void>>);
 
   @override
-  List<_i7.DataRecord> getRecords({String? sessionType}) => (super.noSuchMethod(
+  _i6.Future<_i3.Result<String>> saveGraphFileMetadata({
+    required String? filePath,
+    required String? fileName,
+    required DateTime? creationDate,
+    required _i9.MeasurementType? measurementType,
+    String? sessionId,
+  }) =>
+      (super.noSuchMethod(
         Invocation.method(
-          #getRecords,
+          #saveGraphFileMetadata,
           [],
-          {#sessionType: sessionType},
+          {
+            #filePath: filePath,
+            #fileName: fileName,
+            #creationDate: creationDate,
+            #measurementType: measurementType,
+            #sessionId: sessionId,
+          },
         ),
-        returnValue: <_i7.DataRecord>[],
-      ) as List<_i7.DataRecord>);
+        returnValue: _i6.Future<_i3.Result<String>>.value(_FakeResult_1<String>(
+          this,
+          Invocation.method(
+            #saveGraphFileMetadata,
+            [],
+            {
+              #filePath: filePath,
+              #fileName: fileName,
+              #creationDate: creationDate,
+              #measurementType: measurementType,
+              #sessionId: sessionId,
+            },
+          ),
+        )),
+      ) as _i6.Future<_i3.Result<String>>);
+
+  @override
+  _i3.Result<List<_i7.DataRecord>> getRecordsBySession(String? sessionId) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #getRecordsBySession,
+          [sessionId],
+        ),
+        returnValue: _FakeResult_1<List<_i7.DataRecord>>(
+          this,
+          Invocation.method(
+            #getRecordsBySession,
+            [sessionId],
+          ),
+        ),
+      ) as _i3.Result<List<_i7.DataRecord>>);
+
+  @override
+  _i6.Future<_i3.Result<void>> markRecordAsDeleted(String? id) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #markRecordAsDeleted,
+          [id],
+        ),
+        returnValue: _i6.Future<_i3.Result<void>>.value(_FakeResult_1<void>(
+          this,
+          Invocation.method(
+            #markRecordAsDeleted,
+            [id],
+          ),
+        )),
+      ) as _i6.Future<_i3.Result<void>>);
 
   @override
   bool updateShouldNotify(
@@ -261,7 +367,7 @@ class MockDatabaseProvider extends _i1.Mock implements _i4.DatabaseProvider {
 
   @override
   _i5.RemoveListener addListener(
-    _i9.Listener<Map<String, _i7.DataRecord>>? listener, {
+    _i10.Listener<Map<String, _i7.DataRecord>>? listener, {
     bool? fireImmediately = true,
   }) =>
       (super.noSuchMethod(

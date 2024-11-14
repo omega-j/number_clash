@@ -186,6 +186,25 @@ class DataManagementRouteArgs {
 }
 
 /// generated route for
+/// [MainGamePage]
+class MainGameRoute extends PageRouteInfo<void> {
+  const MainGameRoute({List<PageRouteInfo>? children})
+      : super(
+          MainGameRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'MainGameRoute';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      return const MainGamePage();
+    },
+  );
+}
+
+/// generated route for
 /// [MainPage]
 class MainRoute extends PageRouteInfo<MainRouteArgs> {
   MainRoute({

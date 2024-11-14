@@ -25,13 +25,15 @@ class DataRecordAdapter extends TypeAdapter<DataRecord> {
       creationDate: fields[5] as DateTime,
       metadata: (fields[6] as Map).cast<String, dynamic>(),
       data: (fields[7] as Map?)?.cast<String, dynamic>(),
+      isMarkedForDeletion: fields[8] as bool,
+      binaryData: fields[9] as Uint8List?,
     );
   }
 
   @override
   void write(BinaryWriter writer, DataRecord obj) {
     writer
-      ..writeByte(8)
+      ..writeByte(10)
       ..writeByte(0)
       ..write(obj.id)
       ..writeByte(1)
@@ -47,7 +49,11 @@ class DataRecordAdapter extends TypeAdapter<DataRecord> {
       ..writeByte(6)
       ..write(obj.metadata)
       ..writeByte(7)
-      ..write(obj.data);
+      ..write(obj.data)
+      ..writeByte(8)
+      ..write(obj.isMarkedForDeletion)
+      ..writeByte(9)
+      ..write(obj.binaryData);
   }
 
   @override

@@ -1,9 +1,34 @@
-// Measurement types used throughout the application:
+enum DotType {
+  one,
+  five,
+  twenty,
+  fifty,
+}
 
+extension DotTypeExtension on DotType {
+  int get value {
+    switch (this) {
+      case DotType.one:
+        return 1;
+      case DotType.five:
+        return 5;
+      case DotType.twenty:
+        return 20;
+      case DotType.fifty:
+        return 50;
+    }
+  }
+}
+
+///old TODO: sort dem out:
+// Measurement types used throughout the application:
 enum MeasurementType {
   fluoride,
   temperature,
-  ph, realTime, graph, data,
+  ph,
+  realTime,
+  graph,
+  data,
 }
 
 // Connection status codes:

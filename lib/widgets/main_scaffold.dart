@@ -153,7 +153,7 @@ class MainScaffoldState extends ConsumerState<MainScaffold> {
                             _buildDrawerItem(
                                 Icons.build, 'setup_page', SetupRoute()),
                             _buildDrawerItem(Icons.insert_chart_outlined,
-                                'real_time_data_page', RealTimeDataRoute()),
+                                'real_time_data_page', MainGameRoute()),
                             _buildDrawerItem(Icons.storage,
                                 'data_management_page', DataManagementRoute()),
                             _buildDrawerItem(Icons.settings, 'settings_page',
@@ -291,8 +291,8 @@ class MainScaffoldState extends ConsumerState<MainScaffold> {
           ),
           _buildBottomNavigationItem(
             icon: Icons.insert_chart_outlined,
-            route: RealTimeDataRoute(),
-            isSelected: currentPage.runtimeType == RealTimeDataRoute,
+            route: MainGameRoute(),
+            isSelected: currentPage.runtimeType == MainGameRoute,
           ),
           _buildBottomNavigationItem(
             icon: Icons.storage,
