@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../enums/common_enums.dart';
-import 'base_dot.dart';
-import 'game_dot.dart';
+import '../providers/dot_manager.dart';
 
 class PlayerDot extends StatefulWidget {
   final DotType dotType;
@@ -19,30 +19,32 @@ class _PlayerDotState extends State<PlayerDot> {
   @override
   void initState() {
     super.initState();
-    // Initialize position based on initial position provided
     position = widget.initialPosition;
   }
 
-  void _onPanUpdate(DragUpdateDetails details) {
+  void _onPanUpdate(DragUpdateDetails details, WidgetRef ref) {
     setState(() {
-      // Update position based on drag delta
       position += details.delta;
+      print("PlayerDot moved to $position");
     });
+    ref.read(dotManagerProvider.notifier).updatePlayerPosition(position);
   }
 
   @override
   Widget build(BuildContext context) {
-    return Positioned(
-      left: position.dx,
-      top: position.dy,
-      child: GestureDetector(
-        onPanUpdate: _onPanUpdate,
-        child: CircleAvatar(
-          radius: 25 + (widget.dotType.value / 10),
-          backgroundColor: widget.dotType.value > 0 ? Colors.blue : Colors.red,
-          child: Text(
-            '${widget.dotType.value.abs()}',
-            style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+    return Consumer(
+      builder: (context, ref, _) => Positioned(
+        left: position.dx,
+        top: position.dy,
+        child: GestureDetector(
+          onPanUpdate: (details) => _onPanUpdate(details, ref),
+          child: CircleAvatar(
+            radius: 25 + (widget.dotType.value / 10),
+            backgroundColor: widget.dotType.value > 0 ? Colors.blue : Colors.red,
+            child: Text(
+              '${widget.dotType.value.abs()}',
+              style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+            ),
           ),
         ),
       ),

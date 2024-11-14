@@ -10,7 +10,6 @@ class PlayerDotModel extends BaseDot {
   PlayerDotModel({required this.dotType, required this.position})
       : super(dotType: dotType, position: position);
 
-  // Copy-with method for immutability
   PlayerDotModel copyWith({DotType? dotType, Offset? position}) {
     return PlayerDotModel(
       dotType: dotType ?? this.dotType,
@@ -30,12 +29,12 @@ class PlayerDotModel extends BaseDot {
     return DotType.one;
   }
 
-  // Implement the onCollision method required by BaseDot
   @override
   void onCollision(BaseDot otherDot) {
     if (otherDot is GameDot) {
-      // Increase the value when colliding with a GameDot
+      // Increase value on collision and return a new instance with updated value
       increaseValue(otherDot.value);
+      print("PlayerDot collided with GameDot. New PlayerDot value: ${value}");
     }
   }
 }

@@ -12,31 +12,84 @@ class DotManager extends StateNotifier<List<BaseDot>> {
   late PlayerDotModel playerDot;
 
   DotManager() : super([]) {
-    playerDot = PlayerDotModel(dotType: DotType.one, position: Offset.zero);
+    // Initialize playerDot with a starting position
+    playerDot = PlayerDotModel(dotType: DotType.one, position: Offset(200, 300));
+    // Set initial state to contain playerDot only
     state = [playerDot];
+    print("DotManager initialized with PlayerDot at ${playerDot.position}");
   }
 
-  void addDot(GameDot dot) {
-    state = [...state, dot];
+  // Method to add GameDots from the MainGamePage initialization
+  void addDots(List<GameDot> gameDots) {
+    state = [...state, ...gameDots];
+    print("Added GameDots to state:");
+    for (var dot in gameDots) {
+      print("GameDot at ${dot.position} with value ${dot.value}");
+    }
+  }
+
+  void updatePlayerPosition(Offset newPosition) {
+    print("updatePlayerPosition called with $newPosition");
+    playerDot = playerDot.copyWith(position: newPosition);
+    updateDots();
   }
 
   void updateDots() {
-    for (var dot in state) {
-      if (dot != playerDot && dot is GameDot && _isCloseEnough(playerDot, dot)) {
-        _linkDots(playerDot, dot);
+  // Copy of current state to prevent concurrent modification
+  List<BaseDot> updatedState = List.from(state);
+  bool hasLinked = false;
+
+  print("Initial State of Dots:");
+  for (var dot in updatedState) {
+    if (dot is GameDot) {
+      print("GameDot at ${dot.position} with value ${dot.value}");
+    }
+  }
+
+  // Collect dots to remove in a separate list
+  List<GameDot> dotsToRemove = [];
+
+  for (var dot in updatedState) {
+    if (dot is GameDot) {
+      final distance = _calculateDistance(playerDot.position, dot.position);
+      print("Checking GameDot at ${dot.position} with value ${dot.value}");
+      print("Distance between PlayerDot and GameDot: $distance");
+
+      if (_isCloseEnough(playerDot.position, dot.position)) {
+        print("Linking PlayerDot with GameDot of value ${dot.value}");
+        playerDot = playerDot.increaseValue(dot.value);
+        dotsToRemove.add(dot); // Add dot to the list for removal
+        hasLinked = true;
+        print("PlayerDot new value after linking: ${playerDot.value}");
+        break; // Only link one dot per update
       }
     }
   }
 
-  bool _isCloseEnough(PlayerDotModel player, GameDot other) {
-    final dx = player.position.dx - other.position.dx;
-    final dy = player.position.dy - other.position.dy;
-    final distance = sqrt(dx * dx + dy * dy);
-    return distance < 50;
-  }
-
-  void _linkDots(PlayerDotModel player, GameDot other) {
-    state = state.where((dot) => dot != other).toList();
-    player.increaseValue(other.value); 
+  // Update the state by removing the linked dots after the loop
+  if (hasLinked) {
+    updatedState.removeWhere((dot) => dotsToRemove.contains(dot));
+    state = updatedState;
+    print("Updated State after linking:");
+    for (var dot in state) {
+      if (dot is GameDot) {
+        print("Remaining GameDot at ${dot.position} with value ${dot.value}");
+      }
+    }
   }
 }
+
+  double _calculateDistance(Offset position1, Offset position2) {
+    final dx = position1.dx - position2.dx;
+    final dy = position1.dy - position2.dy;
+    return sqrt(dx * dx + dy * dy);
+  }
+
+  bool _isCloseEnough(Offset playerPosition, Offset dotPosition) {
+    final distance = _calculateDistance(playerPosition, dotPosition);
+    return distance < 100; // Threshold for linking
+  }
+}
+final dotManagerProvider = StateNotifierProvider<DotManager, List<BaseDot>>((ref) {
+  return DotManager();
+});
