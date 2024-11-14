@@ -3,11 +3,12 @@ import '../../../enums/common_enums.dart';
 import 'base_dot.dart';
 import 'game_dot.dart';
 
-class PlayerDot extends BaseDot {
+class PlayerDot extends StatefulWidget {
   final DotType dotType;
   final Offset position;
 
-  PlayerDot({required this.dotType, required this.position}) : super(dotType: dotType, position: position);
+  const PlayerDot({required this.dotType, required this.position, Key? key})
+      : super(key: key);
 
   // Copy-with method for immutability
   PlayerDot copyWith({DotType? dotType, Offset? position}) {
@@ -18,8 +19,9 @@ class PlayerDot extends BaseDot {
   }
 
   PlayerDot increaseValue(int addedValue) {
-    final newType = _getDotTypeForValue(value + addedValue);
-    return copyWith(dotType: newType); // Creates a new instance with updated dotType
+    final newType = _getDotTypeForValue(dotType.value + addedValue);
+    return copyWith(
+        dotType: newType); // Creates a new instance with updated dotType
   }
 
   DotType _getDotTypeForValue(int totalValue) {
@@ -30,10 +32,22 @@ class PlayerDot extends BaseDot {
   }
 
   @override
-  void onCollision(BaseDot otherDot) {
-    if (otherDot is GameDot) {
-      increaseValue(otherDot.value); // Instead of modifying, returns a new instance with updated value
-    }
+  _PlayerDotState createState() => _PlayerDotState();
+}
+
+class _PlayerDotState extends State<PlayerDot> {
+  late Offset position;
+
+  @override
+  void initState() {
+    super.initState();
+    position = widget.position;
+  }
+
+  void _onPanUpdate(DragUpdateDetails details) {
+    setState(() {
+      position += details.delta; // Update position as the dot is dragged
+    });
   }
 
   @override
@@ -41,28 +55,16 @@ class PlayerDot extends BaseDot {
     return Positioned(
       left: position.dx,
       top: position.dy,
-      child: Draggable(
-        data: this,
-        feedback: CircleAvatar(
-          radius: 25 + (value / 10),
-          backgroundColor: color,
-          child: Text(
-            '${value.abs()}',
-            style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
-          ),
-        ),
+      child: GestureDetector(
+        onPanUpdate: _onPanUpdate,
         child: CircleAvatar(
-          radius: 25 + (value / 10),
-          backgroundColor: color,
+          radius: 25 + (widget.dotType.value / 10),
+          backgroundColor: widget.dotType.value > 0 ? Colors.blue : Colors.red,
           child: Text(
-            '${value.abs()}',
+            '${widget.dotType.value.abs()}',
             style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
           ),
         ),
-        onDragUpdate: (details) {
-          // This will create a new instance with updated position when dragged
-          copyWith(position: position + details.delta);
-        },
       ),
     );
   }
